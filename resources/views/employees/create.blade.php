@@ -36,36 +36,31 @@
                         <table border="0" width="100%">
                         <tr>
                         <td>
-                        <div class="form-group row">
-                            <label for="emp_code" class="control-label col-lg-2 col-sm-2">អត្តលេខ</label>
-                            <div class="col-lg-3 col-sm-2">
-                                <input type="text" required autofocus name="emp_code" id="emp_code" class="form-control" value="{{old('emp_code')}}">
-                            </div> 
-                            <label for="khm_name" class="control-label col-lg-2 col-sm-2">ឈ្មោះខ្មែរ</label>
-                            <div class="col-lg-3 col-sm_2">
-                                <input type="text" required autofocus name="khm_name" id="khm_name" class="form-control" value="{{old('khm_name')}}">
-                            </div>                                               
-                        </div>      
-                        <div class="form-group row">                          
-                            <label for="eng_name" class="control-label col-lg-2 col-sm-2">ឈ្មោះទ្បាតាំង</label>
-                            <div class="col-lg-3 col-sm_2">
-                                <input type="text" required autofocus name="eng_name" id="eng_name" class="form-control" value="{{old('eng_name')}}">
-                            </div>
-                            <label for="eng_name" class="control-label col-lg-2 col-sm-2">រូបថត</label>
-                            <div class="col-lg-3 col-sm_2">
-                                <input type="file" value="" name="photo" id="photo" class="form-control" onchange="loadFile(event)">
-                            </div>
-                        </div>  
-                        <div class="form-group row">
-                        <label for="police_card_id" class="control-label col-lg-2 col-sm-2">លេខអត្តសញ្ញាណប័ណ្ណនគរបាល</label>
-                            <div class="col-lg-3 col-sm-2">
-                                <input type="text" required autofocus name="police_card_id" id="police_card_id" class="form-control" value="{{old('police_card_id')}}">
-                            </div> 
-                            <label for="national_card_id" class="control-label col-lg-2 col-sm-2">លេខអត្តសញ្ញាណប័ណ្ណខ្មែរ</label>
-                            <div class="col-lg-3 col-sm_2">
-                                <input type="text" required autofocus name="national_card_id" id="national_card_id" class="form-control" value="{{old('national_card_id')}}">
+                            <div class="form-group row">
+                                <div class="col-lg-3 col-sm-2">
+                                    អត្តលេខមន្តី្រនគបាលជាតិលេខ: <input type="text" required autofocus name="emp_code" id="emp_code" class="form-control">
+                                </div>
+                                <div class="col-lg-4 col-sm-2">
+                                    លេខអត្តសញ្ញាណប័ណ្ណនគរបាលលេខ:<input type="text" required autofocus name="police_card_id" id="police_card_id" class="form-control">
+                                </div> 
+                                <div class="col-lg-3 col-sm_2">
+                                    លេខអត្តសញ្ញាណប័ណ្ណខ្មែរលេខ: <input type="text" required autofocus name="national_card_id" id="national_card_id" class="form-control">
+                                </div>                                                
                             </div>      
-                        </div>    
+                            <div class="form-group row">  
+                                <div class="col-lg-3 col-sm_2">
+                                    នាមត្រកូល និង នាមខ្លួន:
+                                    <input type="text" required autofocus name="khm_name" id="khm_name" class="form-control">
+                                </div>                     
+                                <div class="col-lg-4 col-sm_2">
+                                    អក្សរទ្បាតាំង:
+                                    <input type="text" required autofocus name="eng_name" id="eng_name" class="form-control">
+                                </div>
+                                <div class="col-lg-3 col-sm_2">
+                                    រូបថត
+                                    <input type="file" value="" name="photo" id="photo" class="form-control" onchange="loadFile(event)">
+                                </div>
+                            </div> 
                         </td>
                         <td valign="top">
                             <div class="form-group row">
@@ -88,49 +83,50 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="pills-other-tab" data-toggle="pill" href="#pills-other" role="tab" aria-controls="pills-other" aria-expanded="true">ព័ត៌មានផ្សេងៗ</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-family-tab" data-toggle="pill" href="#pills-family" role="tab" aria-controls="pills-family" aria-expanded="true">ព័ត៌មានគ្រួសារ</a>
+                                    </li>
                                 </ul>
+                               
                                 <div class="tab-content" id="pills-tabContent" style="margin-left: -15px;">
                                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                         <div class="form-group row">
-                                            <label for="gender" class="control-label col-lg-1 col-sm-2">ភេទ</label>
-                                            <div class="col-lg-2 col-sm-2">
+                                            <div class="col-lg-4 col-sm-2">
+                                                ភេទ
                                                 <select class="form-control" name="gender" id="gender">
                                                     <option value="ប្រុស">ប្រុស</option>
                                                     <option value="ស្រី">ស្រី</option>
                                                 </select>
                                             </div>
-                                            <label for="nationality" class="control-label col-lg-1 col-sm-2">សញ្ជាត្តិ</label>
-                                            <div class="col-lg-3 col-sm_2">                                                
+                                            <div class="col-lg-4 col-sm-2">
+                                                ថ្ងៃ ខែ ឆ្នាំកំណើត
+                                            <input type="date" id="birth_of_date" name="birth_of_date" class="form-control">
+                                            </div>
+                                            <div class="col-lg-4 col-sm_2">    
+                                                សញ្ជាត្តិ                               
                                                 <input type="text" id="nationality" name="nationality" class="form-control">
                                             </div>
-                                            <label for="marital_status" class="control-label col-lg-2 col-sm-2">ស្ថានភាពគ្រួសារ</label>
-                                            <div class="col-lg-3 col-sm_2">
-                                                <select class="form-control" id="marital_status" name="marital_status">
-                                                    <option value="Single">នៅលីវ</option>
-                                                    <option value="Married">រៀបការ</option>
-                                                    <option value="Divorced">ពោះម៉ាយ</option>
-                                                    <option value="Widow">មេម៉ាយ</option>              
-                                                </select>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-7 col-sm-2">
+                                                កម្រិតវប្បធ៌មទូទៅ (បំពេញយកតែចុងក្រោយ)
+                                            <input type="text" id="qualification" name="qualification" class="form-control">
+                                            </div>
+                                            <div class="col-lg-5 col-sm-2">
+                                                លេខទូរស័ព្ទ
+                                            <input type="text" id="phone" name="phone" class="form-control" placeholder="០១២៣៤៥៦៧៨៩ / ០១២​៣៤៥​៦៧៨">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="dob" class="control-label col-lg-1 col-sm-2">ថ្ងៃកំណើត</label>
-                                            <div class="col-lg-2 col-sm-2">
-                                               <input type="date" id="birth_of_date" name="birth_of_date" class="form-control" value="<?php echo date("Y-m-d"); ?>">
-                                            </div>
-                                            <label for="qualification" class="control-label col-lg-1 col-sm-2">កំរិតវប្បធម៏</label>
-                                            <div class="col-lg-3 col-sm-2">
-                                               <input type="text" id="qualification" name="qualification" class="form-control">
-                                            </div>
-                                            <label for="phone" class="control-label col-lg-2 col-sm-2">លេខទូរសព្ទ</label>
-                                            <div class="col-lg-3 col-sm-2">
-                                               <input type="text" id="phone" name="phone" class="form-control">
+                                            <div class="col-lg-12 col-sm-2">
+                                                ទីកន្លែងកំណើត :
+                                               <input type="text" id="place_of_bod" name="place_of_bod" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="address" class="control-label col-lg-1 col-sm-2">ទីលំនៅ</label>
-                                            <div class="col-lg-11 col-sm-2">
-                                               <input type="text" id="address" name="address" class="form-control">
+                                            <div class="col-lg-12 col-sm-2">
+                                                អាសយដ្ឋានបច្ចុប្បន្ន :
+                                            <input type="text" id="address" name="address" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -182,6 +178,17 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show" id="pills-family" role="tabpanel" aria-labelledby="pills-family-tab">
+                                        <div class="col-lg-3 col-sm_2">
+                                            ស្ថានភាពគ្រួសារ
+                                            <select class="form-control" id="marital_status" name="marital_status">
+                                                <option value="នៅលីវ">នៅលីវ</option>
+                                                <option value="រៀបការ">រៀបការ</option>
+                                                <option value="ពោះម៉ាយ">ពោះម៉ាយ</option>
+                                                <option value="មេម៉ាយ">មេម៉ាយ</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab">
