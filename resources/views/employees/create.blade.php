@@ -78,6 +78,15 @@
                                         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-expanded="true">ព័ត៌មានទូទៅ</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link" id="pills-grade-study-tab" data-toggle="pill" href="#pills-grade-study" role="tab" aria-controls="pills-grade-study" aria-expanded="true">ការបណ្តុះបណ្តាល</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-promote-tab" data-toggle="pill" href="#pills-promote" role="tab" aria-controls="pills-promote" aria-expanded="true">ការលើកសរសើរ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-punish-tab" data-toggle="pill" href="#pills-punish" role="tab" aria-controls="pills-punish" aria-expanded="true">ការដាក់វិន័យ</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" id="pills-work-history-tab" data-toggle="pill" href="#pills-work-history" role="tab" aria-controls="pills-work-history" aria-expanded="true">ប្រវត្តិការងារ​</a>
                                     </li>
                                     <li class="nav-item">
@@ -124,27 +133,6 @@
                                             <div class="col-lg-12 col-sm-12">
                                                 ចំណេះដឹងភាសាបរទេស :
                                                 <input type="text" id="language" name="language" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12 col-sm-2">
-                                                 កម្រិតបណ្តុះបណ្តាលវិជ្ជាជីវ: (ជំនាញ បច្ចេកទេស ឯកទេស)​&nbsp;&nbsp;&nbsp;​ <a href="#" id="addMore3" class="btn btn-xs btn-primary">បន្តែម</a></th>
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <table id="edu" class="table table-condensed">
-                                                            </thead>
-                                                            <tbody id="data3">
-                                                            <tr>
-                                                                <td><input type="text" class="form-control" order="0" placeholder="ការបវិច្ឆេទ"></td>
-                                                                <td><input type="text" class="form-control"​​ placeholder="រយ:ពេលសិក្សា"​></td>
-                                                                <td><input type="text" class="form-control"​ placeholder="ជំនាញ នៃវគ្គបណ្ឌោះបណ្តាល"></td>
-                                                                <td><input type="text" class="form-control" placeholder="គ្រឹះស្តានសិក្សាបណ្តុោះបណ្តាល"​></td>
-                                                                <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -278,6 +266,8 @@
                                                 <input type="text" id="" name="" class="form-control">
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-grade-study" role="tabpanel" aria-labelledby="pills-grade-study-tab">
                                         <div class="form-group row">
                                             <div class="col-md-12">
                                                 សូមរៀបអីពីសកម្មភាពការងារ និង មុខតំណែងដែលបានទទួលកន្លងមក (ឆ្នាំ ១៦៩៧ ដល់បច្ចុប្បន្ន) <a href="#" id="addMore4" class="btn btn-xs btn-primary">បន្តែម</a></th>
@@ -294,6 +284,60 @@
                                                                 <td><input type="text" class="form-control" order="0" placeholder="ការបវិច្ឆេទ"></td>
                                                                 <td><input type="text" class="form-control"​ placeholder="សកម្មភាពការងារ និង មុខតំណែងដែលធ្លាប់បានទទួល"></td>
                                                                 <td><input type="text" class="form-control" placeholder="នាយកដ្ធាន-អង្គភាព"​></td>
+                                                                <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-promote" role="tabpanel" aria-labelledby="pills-promote-tab">
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                លិខិតសរសើរ-ប័ណ្ណសរសើរ-ឥស្សវិយយស <a href="#" id="addMore6" class="btn btn-xs btn-primary">បន្តែម</a></th>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="" class="table table-condensed">
+                                                            </thead>
+                                                            <tbody id="data6">
+                                                            <tr>
+                                                                <td><input type="text" class="form-control" order="0" placeholder="លេខ"></td>
+                                                                <td><input type="text" class="form-control"​ placeholder="កាលបរិច្ឆេទ"></td>
+                                                                <td><input type="text" class="form-control" placeholder="រូបភាពលើកសរសើរ"​></td>
+                                                                <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade" id="pills-punish" role="tabpanel" aria-labelledby="pills-punish-tab">
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                សូមរៀបអីពីសកម្មភាពការងារ និង មុខតំណែងដែលបានទទួលកន្លងមក (ឆ្នាំ ១៦៩៧ ដល់បច្ចុប្បន្ន) <a href="#" id="addMore5" class="btn btn-xs btn-primary">បន្តែម</a></th>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="" class="table table-condensed">
+                                                            </thead>
+                                                            <tbody id="data5">
+                                                            <tr>
+                                                                <td><input type="text" class="form-control" order="0" placeholder="លេខ"></td>
+                                                                <td><input type="text" class="form-control" placeholder="ការបវិច្ឆេទ"></td>
+                                                                <td><input type="text" class="form-control"​ placeholder="រូបភាពវិន័យដែលធ្លាប់ទទួល"></td>
+                                                                <td><input type="text" class="form-control" placeholder="មូលហេតុ"​></td>
                                                                 <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
                                                             </tr>
                                                             </tbody>
@@ -384,6 +428,45 @@ $('#pills-tab a').click(function() {
                 }                                          
                 else{
                     $("#data4").html(tr);
+                }
+            });
+
+            $("#addMore5").click(function (event) {
+                event.preventDefault();
+                var counter = $("#data5 tr").length + 1;
+                var tr = "";
+                tr += "<tr>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='លេខ' order='" + counter + "'></td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='កាលបរិច្ឆេទ'​>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='រូបភាពវិន័យដែលធ្លាប់ទទួល'​>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='មូលហេតុ'​>" + "</td>";
+                tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
+                tr += "</tr>";
+                if($("#data5 tr").length>0)
+                {
+                    $("#data5 tr:last-child").after(tr); 
+                }                                          
+                else{
+                    $("#data5").html(tr);
+                }
+            });
+
+            $("#addMore6").click(function (event) {
+                event.preventDefault();
+                var counter = $("#data6 tr").length + 1;
+                var tr = "";
+                tr += "<tr>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='លេខ' order='" + counter + "'></td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='កាលបរិច្ឆេទ'​>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='រូបភាពវិន័យដែលធ្លាប់ទទួល'​>" + "</td>";
+                tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
+                tr += "</tr>";
+                if($("#data6 tr").length>0)
+                {
+                    $("#data6 tr:last-child").after(tr); 
+                }                                          
+                else{
+                    $("#data6").html(tr);
                 }
             });
          
