@@ -31,7 +31,7 @@
                         </div>
                     @endif
 
-                    <form action="{{url('/employee/save')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <form action="#" class="form-horizontal" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <table border="0" width="100%">
                         <tr>
@@ -41,7 +41,7 @@
                                     អត្តលេខមន្តី្រនគបាលជាតិលេខ: <input type="text" required autofocus name="emp_code" id="emp_code" class="form-control">
                                 </div>
                                 <div class="col-lg-4 col-sm-2">
-                                    លេខអត្តសញ្ញាណប័ណ្ណនគរបាលលេខ:<input type="text" required autofocus name="police_card_id" id="police_card_id" class="form-control">
+                                    លេខអត្តសញ្ញាណប័ណ្ណនមន្ត្រីនគរបាលជាតិលេខ:<input type="text" required autofocus name="police_card_id" id="police_card_id" class="form-control">
                                 </div> 
                                 <div class="col-lg-3 col-sm_2">
                                     លេខអត្តសញ្ញាណប័ណ្ណខ្មែរលេខ: <input type="text" required autofocus name="national_card_id" id="national_card_id" class="form-control">
@@ -100,7 +100,7 @@
                                             </div>
                                             <div class="col-lg-4 col-sm-2">
                                                 ថ្ងៃ ខែ ឆ្នាំកំណើត
-                                            <input type="date" id="birth_of_date" name="birth_of_date" class="form-control">
+                                                <input type="date" id="birth_of_date" name="birth_of_date" class="form-control" required>
                                             </div>
                                             <div class="col-lg-4 col-sm_2">    
                                                 សញ្ជាត្តិ                               
@@ -115,6 +115,36 @@
                                             <div class="col-lg-5 col-sm-2">
                                                 លេខទូរស័ព្ទ
                                             <input type="text" id="phone" name="phone" class="form-control" placeholder="០១២៣៤៥៦៧៨៩ / ០១២​៣៤៥​៦៧៨">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                ចំណេះដឹងភាសាបរទេស :
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="edu" class="table table-condensed">
+                                                            <thead>
+                                                            <tr>
+                                                                <th style="width: 200px">ភាសារ</th>
+                                                                <th>បរិយាយ &nbsp;&nbsp;&nbsp;<a href="#" id="addMore3" class="btn btn-xs btn-primary">បន្តែម</a></th>
+                                                                <th style="width: 80px"></th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody id="data3">
+                                                            <tr>
+                                                                <td><input type="text" class="form-control" value="Khmer" order="0"></td>
+                                                                <td><input type="text" class="form-control"​ placeholder="ភាសារកំណើត"></td>
+                                                                <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><input type="text" class="form-control" value="English" order="1"></td>
+                                                                <td><input type="text" class="form-control"​​ placeholder="និយាយបានល្អ សរសេរបានល្អ ស្តាប់បានល្អ"></td>
+                                                                <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -138,7 +168,7 @@
                                             </div>
                                             <label for="position" class="control-label col-lg-1 col-sm-2">មុខដំណែង</label>
                                             <div class="col-lg-3 col-sm_2">
-                                                <select class="form-control" id="position" name="position">
+                                                <select class="form-control" id="position" name="position"  required>
                                                     <option value="">ជ្រើសរើសមុខដំណែង</option>
                                                     @foreach($positions as $pos)
                                                         <option value="{{$pos->id}}">{{$pos->name}}</option>
@@ -181,14 +211,44 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade show" id="pills-family" role="tabpanel" aria-labelledby="pills-family-tab">
-                                        <div class="col-lg-3 col-sm_2">
-                                            ស្ថានភាពគ្រួសារ
-                                            <select class="form-control" id="marital_status" name="marital_status">
-                                                <option value="នៅលីវ">នៅលីវ</option>
-                                                <option value="រៀបការ">រៀបការ</option>
-                                                <option value="ពោះម៉ាយ">ពោះម៉ាយ</option>
-                                                <option value="មេម៉ាយ">មេម៉ាយ</option>
-                                            </select>
+                                        <div class="form-group row">
+                                            <div class="col-lg-3 col-sm-2">
+                                                ស្ថានភាពគ្រួសារ
+                                                <select class="form-control" id="marital_status" name="marital_status">
+                                                    <option value="នៅលីវ">នៅលីវ</option>
+                                                    <option value="រៀបការ">រៀបការ</option>
+                                                    <option value="ពោះម៉ាយ">ពោះម៉ាយ</option>
+                                                    <option value="មេម៉ាយ">មេម៉ាយ</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-1 col-sm-1">
+                                            </div>
+                                            <div class="col-lg-3 col-sm-2"><br> 
+                                                រស់ : <input type="checkbox" name="live">
+                                                ស្លាប់​ : <input type="checkbox" name="die">
+                                            </div>
+                                            <div class="col-lg-4 col-sm-2">
+                                                ថ្ងៃ ខែ ឆ្នាំកំណើត
+                                                <input type="date" id="birth_of_date" name="familay_birth_of_date" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                ទីកន្លែងកំណើត :
+                                               <input type="text" id="place_of_bod" name="familay_place_of_bod" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                មុខរបរបច្ចុប្បន្ន :
+                                               <input type="text" id="place_of_bod" name="familay_career" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                អាស័យដ្ធានបច្ចុប្បន្ន :
+                                               <input type="text" id="place_of_bod" name="family_address" class="form-control">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab">
@@ -209,7 +269,7 @@
                         <div class="form-group row">
                             <label class="control-label col-lg-1 col-sm-2">&nbsp;</label>
                             <div class="col-lg-6 col-sm-8">
-                                <button class="btn btn-primary" type="submit">{{$lb_save}}</button>
+                                <button class="btn btn-primary"​ id="btnSave" type="button">{{$lb_save}}</button>
                                 <button class="btn btn-danger" type="reset">{{$lb_cancel}}</button>
                             </div>
                         </div>
@@ -234,4 +294,97 @@ $('#pills-tab a').click(function() {
             output.src = URL.createObjectURL(e.target.files[0]);
         }
 </script>
+    <script>
+        var burl = "{{url('/')}}";
+        $(document).ready(function(){
+            $("#addMore3").click(function (event) {
+                event.preventDefault();
+                var counter = $("#data3 tr").length + 1;
+                var tr = "";
+                tr += "<tr>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='ឈ្មេាះភាសារ' order='" + counter + "'>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control'​ placeholder='និយាយបានល្អ សរសេរបានល្អ ស្តាប់បានល្អ'>" + "</td>";
+                tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
+                tr += "</tr>";
+                if($("#data3 tr").length>0)
+                {
+                    $("#data3 tr:last-child").after(tr);
+
+                }
+                else{
+                    $("#data3").html(tr);
+                }
+            });
+         
+            // save cv
+            $("#btnSave").click(function () {
+                var info = {
+                    emp_code: $("#emp_code").val(),
+                    khm_name: $("#khm_name").val(),
+                    eng_name: $("#eng_name").val(),
+                    gender: $("#gender").val(),
+                    marital_status: $("#marital_status").val(),
+                    nationality: $("#nationality").val(),
+                    photo: $("#photo").val(),
+                    birth_of_date: $("#birth_of_date").val(),
+                    qualification: $("#qualification").val(),
+                    phone: $("#phone").val(),
+                    address: $("#address").val(),
+                    place_of_bod: $("#place_of_bod").val(),
+                    hire_date: $("#hire_date").val(),
+                    position: $("#position").val(),
+                    unit: $("#unit").val(),
+                    department: $("#department").val(),
+                    shift: $("#shift").val(),
+                    office: $("#office").val(),
+                    police_card_id: $("#police_card_id").val(),
+                    national_card_id: $("#national_card_id").val(),
+                };
+     
+                
+                var lang = [];
+                var tr3 = $("#data3 tr");
+                for(var i=0;i<tr3.length;i++)
+                {
+                    var tds = $(tr3[i]).children("td");
+                    var obj = {
+                        name: $(tds[0]).children("input").val(),
+                        description: $(tds[1]).children("input").val(),
+                        order: $(tds[0]).children("input").attr("order")
+                    };
+                    lang.push(obj);
+                }
+            
+                // data to send
+                var data = {
+                    personal_info: info,
+                    language: lang
+                }
+                // send data to server
+                $.ajax({
+                    type: "POST",
+                    url: burl +"/employee/save",
+                    data: data,
+                    beforeSend: function (request) {
+                        return request.setRequestHeader('X-CSRF-Token', $("input[name='_token']").val());
+                    },
+                    success: function (sms) {
+                        if(sms>0)
+                        {
+                            location.href = burl + "/employee/create";
+                        }
+                    },
+                        error: function() {
+                            alert("សូមត្រួតពិនិត្យ ព៌តមានរបស់អ្នកឡើងវិញ!");
+                        }
+                });
+            });
+        });
+        // function to remove row
+        function rmRow(obj, evt) {
+            evt.preventDefault();
+            var tr = $(obj).parent().parent();
+            tr.remove();
+        }
+    </script>
 @endsection

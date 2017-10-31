@@ -82,7 +82,7 @@ class EmployeeController extends Controller
     }
     public function save(Request $r)
     {
-        $file_name = "default-front.jpg";
+       
         $sms = "";
         $sms1 = "";
         $lang = Auth::user()->language;
@@ -95,46 +95,65 @@ class EmployeeController extends Controller
             $sms = "New employee has been created successfully.";
             $sms1 = "Fail to create new employee. Please check your entry again!";
         }
-        if($r->photo)
+       
+        
+        $info = json_encode($r->personal_info);
+        $info = json_decode($info);
+        $file_name = "default-front.jpg";
+        if($info->photo)
         {
             $file = $r->file('photo');
             $file_name = $file->getClientOriginalName();
             $destinationPath = 'profile/'; // usually in public folder
             $file->move($destinationPath, $file_name);
         }
+
         $data = array(
-            'emp_code' => $r->emp_code,
-            'khm_name' => $r->khm_name,
-            'eng_name' => $r->eng_name,
-            'gender' => $r->gender,
-            'marital_status' => $r->marital_status,
-            'nationality' => $r->nationality,
+            'emp_code' => $info->emp_code,
+            'eng_name' => $info->eng_name,
+            'khm_name' => $info->khm_name,
+            'gender' => $info->gender,
+            'marital_status' => $info->marital_status,
+            'nationality' => $info->nationality,
+            'birth_of_date' => $info->birth_of_date,
+            'hire_date' => $info->hire_date,
+            'position_id' => $info->position,
+            'unit_id' => $info->unit,
+            'office_id' => $info->office,
+            'department_id' => $info->department,
+            'qualification' => $info->qualification,
+            'phone' => $info->phone,
+            'address' => $info->address,
+            'place_of_bod' => $info->place_of_bod,
             'photo' => $file_name,
-            'birth_of_date' => $r->birth_of_date,
-            'qualification' => $r->qualification,
-            'phone' => $r->phone,
-            'address' => $r->address,
-            'place_of_bod' => $r->place_of_bod,
-            'hire_date' => $r->hire_date,
-            'position_id' => $r->position,
-            'unit_id' => $r->unit,
-            'office_id' => $r->office,
-            'department_id' => $r->department,
-            'shift_id' => $r->shift,
-            'police_card_id' => $r->police_card_id,
-            'national_card_id' => $r->national_card_id
+            'shift_id' => $info->shift,
+            'police_card_id' => $info->police_card_id,
+            'national_card_id' => $info->national_card_id
         );
-        $i = DB::table('employees')->insert($data);
-        if ($i)
+        
+       // get language
+       $lang = json_encode($r->language);
+       $lang = json_decode($lang);
+       $languages = array();
+       for($i=0;$i<count($lang); $i++)
+       {
+           $x = array(
+               "name" => $lang[$i]->name,
+               "description" => $lang[$i]->description,
+               "employee_id" => 1,
+               "order_number" => $lang[$i]->order
+           );
+           $languages[] = $x;
+       }
+
+        $i = DB::table('employees')->insertGetId($data);
+       
+        if($i>0)
         {
-            $r->session()->flash('sms', $sms);
-            return redirect('/employee/create');
+            // insert lang
+            DB::table("languages")->insert($languages);
         }
-        else
-        {
-            $r->session()->flash('sms1', $sms1);
-            return redirect('/employee/create');
-        }
+        return $i;
     }
     public function update(Request $r)
     {

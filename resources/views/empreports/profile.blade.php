@@ -24,17 +24,7 @@
             <tr>
                 <td colspan="3" class="head2">ជាតិ សាសនា ព្រះមហាក្សត្រ</td>
             </tr>
-            <tr>
-                <td colspan="3" style="padding-top: 40px;"><span style="margin-left: 33px;">ក្រសួងមហាផ្ទៃ</span></td>
-            </tr>
-            <tr>
-                <td colspan="3"><span style="margin-left: 0px;">អគ្គស្នងការនគរបាលជាតិ</span></td>
-            </tr>
-            <tr>
-                <td colspan="3" style="padding-top: 30px;" class="head2">ប្រវត្តិរូបសង្ខេប</td>
-            </tr>
-            <tr>
-                <td style="width:30%; padding-top: 30px">
+            <td style="width:100%; padding-top: 30px; position: absolute; top: 25px; left: 80%;">
                     <table style="width: 100%">
                         <tr>
                             <td>
@@ -43,105 +33,128 @@
                         </tr>
                     </table>
                 </td>
-                <td valign="top" style="width: 50%; padding-top: 30px;">
+            <tr>
+            <tr>
+                <td colspan="3" ><span style="margin-left: 33px;">ក្រសួងមហាផ្ទៃ</span></td>
+            </tr>
+            <tr>
+                <td colspan="3"><span style="margin-left: 0px;">អគ្គស្នងការនគរបាលជាតិ</span></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="padding-top: 30px;" class="head2">ប្រវត្តិរូបសង្ខេបមន្ត្រីនគរបាលជាតិ</td>
+            </tr>
+            <tr>
+                <td colspan="3"> <br><br><span style="margin-left: 0px; font-weight: bold;">១ - ព័ត៌មានផ្ទាល់ខ្លួន</span></td>
+            </tr>
+                <td valign="top" style="width: 100%; padding-top: ២0px; padding-left: 40px;">
                     <table style="width: 100%">
                         <tr>
-                            <td>អត្តលេខ</td>
-                            <td>:</td>
-                            <td>{{$employee->emp_code}}</td>
+                            <td style="width: 33%;"> នាមត្រកូល និង នាមខ្លួន  : {{$employee->emp_code}} </td>
+                            <td style="width: 33%;"> អក្សរទ្បាតាំង :  {{$employee->eng_name}} </td>
+                            <td style="width: 33%;"> ភេទ : {{$employee->gender}} </td>
                         </tr>
                         <tr>
-                            <td>ឈ្មោះភាសាខ្មែរ</td>
-                            <td>:</td>
-                            <td>{{$employee->khm_name}}</td>
+                            <td>ថ្ងៃ ខែ ឆ្នាំកំណើត  : {{$employee->birth_of_date}}
+                            </td>
+                            <td>សញ្ជាតិ :  {{$employee->nationality}} </td>
                         </tr>
                         <tr>
-                            <td>ឈ្មោះទ្បាតាំង</td>
-                            <td>:</td>
-                            <td>{{$employee->eng_name}}</td>
+                            <td>ទីកន្លែងកំណើត  : {{$employee->place_of_bod}}</td>
                         </tr>
                         <tr>
-                            <td>ភេទ</td>
-                            <td>:</td>
-                            <td>{{$employee->gender}}</td>
+                            <td>អាស័យដ្ធានបច្ចុប្បន្ន  : {{$employee->address}}</td>
                         </tr>
                         <tr>
-                            <td>សញ្ជាត្តិ</td>
-                            <td>:</td>
-                            <td>{{$employee->nationality}}</td>
+                            <td>លេខទូរស័ព្ទ  : {{$employee->phone}}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 20%"></td>
+            </tr>
+            </tr>
+                <td valign="top" style="width: 100%; padding-top: ២0px; padding-left: 40px;">
+                    <table style="width: 100%; float: left;">
+                        <tr>
+                           <td style="width: 33%;"> 
+                                <div style="width: 95%; border: blue solid 1px; border-radius: 10px; padding: 5px 7px;">
+                                    អត្តលេខមន្តី្រនគបាលជាតិ
+                                    <br>លេខ:
+                                </div>
+                            </td>
+                            <td style="width: 33%;"> 
+                                <div style="width: 95%; border: blue solid 1px; border-radius: 10px; padding:5px 7px;">
+                                    លេខអត្តសញ្ញាណប័ណ្ណនមន្ត្រីនគរបាលជាតិ
+                                    <br>លេខ:
+                                </div>
+                            </td>
+                            <td style="width: 33%;"> 
+                                <div style="width: 95%; border: blue solid 1px; border-radius: 10px; padding:5px 7px;">
+                                    លេខអត្តសញ្ញាណប័ណ្ណខ្មែរ
+                                    <br>លេខ:
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </td>
                 <td style="width: 20%"></td>
             </tr>
             <tr>
-                <td colspan="3" style="padding-top: 30px"><span style="margin-left: 0px; font-weight: bold;">ព័ត៌មានទូទៅ</span></td>
+                <td colspan="3" style="padding-top: 30px"><span style="margin-left: 0px; font-weight: bold;">២​ - កម្រិតវប្បធ៌មទូទៅ: </span></td>
             </tr>
             <tr>
-                <td colspan="3">
-                    <table width="100%" border="0">
+                <td colspan="3" style="padding-top: 30px"><span style="margin-left: 0px; font-weight: bold;">៣​ - ចំណេះដឹងភាសាបរទេស: </span></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="padding-top: 30px" ><span style="margin-left: 0px; font-weight: bold;">៣​ - កម្រិតបណ្តះបណ្តាលវិជ្ជាវីវ: (ជំនាញ បច្ចេកទេស ឯកទេស) </span>
+                </td>
+              
+            </tr>
+            <tr>  
+                <td style="padding-left: 40px;">សូមរៀបរាប់វគ្គបណ្តុះបណ្តាល និងថ្ងៃ ខែ ឆ្នាំ ដែលបានសិក្សាកន្លងមក:</td>
+            </tr>
+            <tr>  
+                <td style="padding-left: 40px;">
+                    <table style="width: 100%; border: blue solid 1px; border-collapse: collapse;">
                         <tr>
-                            <td style="width: 30%"><span style="margin-left: 0px;">ស្ថានភាពគ្រួសារ</span></td>
-                            <td>:</td>
-                            <td>{{$employee->marital_status}}</td>
+                            <th style="width: 25%; border: solid 1px blue; border-collapse: collapse​; background: #eee;">កាលបវិច្ចេទ</th>
+                            <th style="width: 25%; border: solid 1px blue; border-collapse: collapse; background: #eee;">រយ:ពេលសិក្សា</th> 
+                            <th style="width: 25%; border: solid 1px blue; border-collapse: collapse; background: #eee;">ជំនាញ នៃវគ្គសិក្សាបណ្តោះបណ្តាល</th>
+                            <th style="width: 25%; border: solid 1px blue; border-collapse: collapse; background: #eee;">គ្រឹះស្តានសិក្សាបណ្តះបណ្តាល</th>
                         </tr>
                         <tr>
-                            <td><span style="margin-left: 0px;">ថ្ងៃខែឆ្នាំកំណើត</span></td>
-                            <td>:</td>
-                            <td>{{$employee->birth_of_date}}</td>
+                            <td style="​width: 25%; border: solid 1px blue; border-collapse: collapse;">01/01/2012</td>
+                            <td style="width: 25%; border: solid 1px blue; border-collapse: collapse;​">2ឆ្នាំ</td>
+                            <td style="width: 25%; border: solid 1px blue; border-collapse: collapse; ">Information Technology</td>
+                            <td style="width: 25%; border: solid 1px blue; border-collapse: collapse; ">អគ្គស្នងការជាតិ</th>
+                        </tr>
+                    
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <br><br><span style="margin-left: 0px; font-weight: bold;">៤ - ប្រវត្តិការងារ</span></td>
+            </tr>
+                <td valign="top" style="width: 100%; padding-top: ២0px; padding-left: 40px;">
+                    <table style="width: 100%">
+                        <tr>
+                            <td>ថ្ងៃ ខែ ឆ្នាំចូលបម្រើការងារក្របខណ្ឌរដ្ធរ  :</td>
                         </tr>
                         <tr>
-                            <td><span style="margin-left: 0px;">លេខទូរសព្ទ</span></td>
-                            <td>:</td>
-                            <td>{{$employee->phone}}</td>
+                            <td><tr>
+                            <td>ថ្ងៃ ខែ ឆ្នាំចូលបម្រើការងារក្របខណ្ឌនគរបាលជាតិ  : </td>
+                        </tr></td>
                         </tr>
                         <tr>
-                            <td valign="top"><span style="margin-left: 0px;">អាស័យដ្ឋាន</span></td>
-                            <td valign="top">:</td>
-                            <td>{{$employee->address}}</td>
+                            <td> ឋានន្តរសក្តិ:</td>
+                        </tr>
+                        <tr>
+                            <td> មុខដំណែង:</td>
+                        </tr>
+                        <tr>
+                            <td> អង្គភាព: </td>
                         </tr>
                     </table>
-                </td>             
-            </tr>         
-            <tr>
-                <td colspan="3"><span style="margin-left: 0px; font-weight: bold;">ព័ត៌មានការងារ</span></td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <table width="100%" border="0">
-                        <tr>
-                            <td style="width: 30%"><span style="margin-left: 0px;">កំរិតវប្បធម៌</span></td>
-                            <td>:</td>
-                            <td>{{$employee->qualification}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 30%"><span style="margin-left: 0px;">នាយកដ្ឋាន</span></td>
-                            <td>:</td>
-                            <td>{{$employee->department_name}}</td>
-                        </tr>
-                        <tr>
-                            <td><span style="margin-left: 0px;">ការិយាល័យ</span></td>
-                            <td>:</td>
-                            <td>{{$employee->office_name}}</td>
-                        </tr>
-                        <tr>
-                            <td><span style="margin-left: 0px;">ផ្នែក</span></td>
-                            <td>:</td>
-                            <td>{{$employee->unit_name}}</td>
-                        </tr>
-                        <tr>
-                            <td><span style="margin-left: 0px;">មុខដំណែង</span></td>
-                            <td>:</td>
-                            <td>{{$employee->position_name}}</td>
-                        </tr>
-                        <tr>
-                            <td><span style="margin-left: 0px;">ថ្ងៃបម្រើការងារ</span></td>
-                            <td>:</td>
-                            <td>{{$employee->hire_date}}</td>
-                        </tr>
-                    </table>
-                </td>  
-            </tr>
+                </td>
         </table>
     </body>
 </html>

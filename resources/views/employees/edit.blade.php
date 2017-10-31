@@ -42,7 +42,7 @@
                                 អត្តលេខមន្តី្រនគបាលជាតិលេខ: <input type="text" required autofocus name="emp_code" id="emp_code" class="form-control" value="{{$employee->emp_code}}">
                             </div>
                             <div class="col-lg-4 col-sm-2">
-                                លេខអត្តសញ្ញាណប័ណ្ណនគរបាលលេខ:<input type="text" required autofocus name="police_card_id" id="police_card_id" class="form-control" value="{{$employee->police_card_id}}">
+                                លេខអត្តសញ្ញាណប័ណ្ណនមន្ត្រីនគរបាលជាតិ:<input type="text" required autofocus name="police_card_id" id="police_card_id" class="form-control" value="{{$employee->police_card_id}}">
                             </div> 
                             <div class="col-lg-3 col-sm_2">
                                 លេខអត្តសញ្ញាណប័ណ្ណខ្មែរលេខ: <input type="text" required autofocus name="national_card_id" id="national_card_id" class="form-control" value="{{$employee->national_card_id}}">
