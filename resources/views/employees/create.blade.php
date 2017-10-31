@@ -278,6 +278,30 @@
                                                 <input type="text" id="" name="" class="form-control">
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                សូមរៀបអីពីសកម្មភាពការងារ និង មុខតំណែងដែលបានទទួលកន្លងមក (ឆ្នាំ ១៦៩៧ ដល់បច្ចុប្បន្ន) <a href="#" id="addMore4" class="btn btn-xs btn-primary">បន្តែម</a></th>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="" class="table table-condensed">
+                                                            </thead>
+                                                            <tbody id="data4">
+                                                            <tr>
+                                                                <td><input type="text" class="form-control" order="0" placeholder="ការបវិច្ឆេទ"></td>
+                                                                <td><input type="text" class="form-control"​ placeholder="សកម្មភាពការងារ និង មុខតំណែងដែលធ្លាប់បានទទួល"></td>
+                                                                <td><input type="text" class="form-control" placeholder="នាយកដ្ធាន-អង្គភាព"​></td>
+                                                                <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab">
                                         <div class="form-group row">
@@ -342,6 +366,24 @@ $('#pills-tab a').click(function() {
                 }                                          
                 else{
                     $("#data3").html(tr);
+                }
+            });
+            $("#addMore4").click(function (event) {
+                event.preventDefault();
+                var counter = $("#data4 tr").length + 1;
+                var tr = "";
+                tr += "<tr>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='ការបវិច្ឆេទ' order='" + counter + "'></td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='សកម្មភាពការងារ និង មុខតំណែងដែលធ្លាប់បានទទួល'​>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='នាយកដ្ធាន-អង្គភាព'​>" + "</td>";
+                tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
+                tr += "</tr>";
+                if($("#data4 tr").length>0)
+                {
+                    $("#data4 tr:last-child").after(tr);
+                }                                          
+                else{
+                    $("#data4").html(tr);
                 }
             });
          
