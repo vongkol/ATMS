@@ -40,7 +40,7 @@
                                 <div class="col-lg-3 col-sm-2">
                                     អត្តលេខមន្តី្រនគបាលជាតិលេខ: <input type="text" required autofocus name="emp_code" id="emp_code" class="form-control">
                                 </div>
-                                <div class="col-lg-4 col-sm-2">
+                                <div class="col-lg-5 col-sm-2">
                                     លេខអត្តសញ្ញាណប័ណ្ណនមន្ត្រីនគរបាលជាតិលេខ:<input type="text" required autofocus name="police_card_id" id="police_card_id" class="form-control">
                                 </div> 
                                 <div class="col-lg-3 col-sm_2">
@@ -52,7 +52,7 @@
                                     នាមត្រកូល និង នាមខ្លួន:
                                     <input type="text" required autofocus name="khm_name" id="khm_name" class="form-control">
                                 </div>                     
-                                <div class="col-lg-4 col-sm_2">
+                                <div class="col-lg-5 col-sm_2">
                                     អក្សរទ្បាតាំង:
                                     <input type="text" required autofocus name="eng_name" id="eng_name" class="form-control">
                                 </div>
@@ -76,6 +76,9 @@
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-expanded="true">ព័ត៌មានទូទៅ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-work-history-tab" data-toggle="pill" href="#pills-work-history" role="tab" aria-controls="pills-work-history" aria-expanded="true">ប្រវត្តិការងារ​</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-expanded="true">ព័ត៌មានការងារ</a>
@@ -118,27 +121,24 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <div class="col-lg-12 col-sm-2">
+                                            <div class="col-lg-12 col-sm-12">
                                                 ចំណេះដឹងភាសាបរទេស :
+                                                <input type="text" id="language" name="language" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-2">
+                                                 កម្រិតបណ្តុះបណ្តាលវិជ្ជាជីវ: (ជំនាញ បច្ចេកទេស ឯកទេស)​&nbsp;&nbsp;&nbsp;​ <a href="#" id="addMore3" class="btn btn-xs btn-primary">បន្តែម</a></th>
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <table id="edu" class="table table-condensed">
-                                                            <thead>
-                                                            <tr>
-                                                                <th style="width: 200px">ភាសារ</th>
-                                                                <th>បរិយាយ &nbsp;&nbsp;&nbsp;<a href="#" id="addMore3" class="btn btn-xs btn-primary">បន្តែម</a></th>
-                                                                <th style="width: 80px"></th>
-                                                            </tr>
                                                             </thead>
                                                             <tbody id="data3">
                                                             <tr>
-                                                                <td><input type="text" class="form-control" value="Khmer" order="0"></td>
-                                                                <td><input type="text" class="form-control"​ placeholder="ភាសារកំណើត"></td>
-                                                                <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><input type="text" class="form-control" value="English" order="1"></td>
-                                                                <td><input type="text" class="form-control"​​ placeholder="និយាយបានល្អ សរសេរបានល្អ ស្តាប់បានល្អ"></td>
+                                                                <td><input type="text" class="form-control" order="0" placeholder="ការបវិច្ឆេទ"></td>
+                                                                <td><input type="text" class="form-control"​​ placeholder="រយ:ពេលសិក្សា"​></td>
+                                                                <td><input type="text" class="form-control"​ placeholder="ជំនាញ នៃវគ្គបណ្ឌោះបណ្តាល"></td>
+                                                                <td><input type="text" class="form-control" placeholder="គ្រឹះស្តានសិក្សាបណ្តុោះបណ្តាល"​></td>
                                                                 <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
                                                             </tr>
                                                             </tbody>
@@ -251,6 +251,34 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="tab-pane fade" id="pills-work-history" role="tabpanel" aria-labelledby="pills-work-history">
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-12">
+                                                ថ្ងៃ ខែ ឆ្នាំចូលបម្រើការងារក្របខណ្ឌរដ្ធ :
+                                               <input type="text" id="" name="" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12 col-sm-12">
+                                                ថ្ងៃ ខែ ឆ្នាំចូលបម្រើការងារក្នុងក្របខណ្ឌនគរបាលជាតិ :
+                                                <input type="text" id="" name="" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-4 col-sm-12">
+                                                ឋានន្តរសក្តិ :
+                                                <input type="text" id="" name="" class="form-control">
+                                            </div>
+                                            <div class="col-lg-4 col-sm-12">
+                                                មុខតំណែង :
+                                                <input type="text" id="" name="" class="form-control">
+                                            </div>
+                                            <div class="col-lg-4 col-sm-12">
+                                                អង្គភាព :
+                                                <input type="text" id="" name="" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="tab-pane fade" id="pills-other" role="tabpanel" aria-labelledby="pills-other-tab">
                                         <div class="form-group row">
                                             <label for="shift" class="control-label col-lg-1 col-sm-2">វេនធ្វើការ</label>
@@ -302,15 +330,16 @@ $('#pills-tab a').click(function() {
                 var counter = $("#data3 tr").length + 1;
                 var tr = "";
                 tr += "<tr>";
-                tr += "<td>" + "<input type='text' class='form-control' placeholder='ឈ្មេាះភាសារ' order='" + counter + "'>" + "</td>";
-                tr += "<td>" + "<input type='text' class='form-control'​ placeholder='និយាយបានល្អ សរសេរបានល្អ ស្តាប់បានល្អ'>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='ការបវិច្ឆេទ' order='" + counter + "'></td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='រយ:ពេលសិក្សា'​>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control'​ placeholder='ជំនាញ នៃវគ្គបណ្ឌោះបណ្តាល'>" + "</td>";
+                tr += "<td>" + "<input type='text' class='form-control' placeholder='គ្រឹះស្តានសិក្សាបណ្តុោះបណ្តាល'​>" + "</td>";
                 tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
                 tr += "</tr>";
                 if($("#data3 tr").length>0)
                 {
                     $("#data3 tr:last-child").after(tr);
-
-                }
+                }                                          
                 else{
                     $("#data3").html(tr);
                 }
