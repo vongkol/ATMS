@@ -15,9 +15,9 @@ class EmployeeController extends Controller
         $data['units'] = DB::table('units')->get();
         $data['positions'] = DB::table('positions')->get();
         $data['employees'] = DB::table('employees')
-        ->join("positions", "employees.position_id","=", "positions.id")
-        ->join("offices", "employees.office_id","=", "offices.id")
-        ->join("departments", "employees.department_id","=", "departments.id")
+        ->leftJoin("positions", "employees.position_id","=", "positions.id")
+        ->leftJoin("offices", "employees.office_id","=", "offices.id")
+        ->leftJoin("departments", "employees.department_id","=", "departments.id")
         ->select("employees.*", "positions.name as position_name","offices.name as office_name","departments.name as department_name")
         ->paginate(10);
         return view('employees.index', $data);
@@ -30,9 +30,9 @@ class EmployeeController extends Controller
         $office = $_GET['off'];
         $department = $_GET['dep'];
         $query = DB::table('employees')
-        ->join("positions", "employees.position_id","=", "positions.id")
-        ->join("offices", "employees.office_id","=", "offices.id")
-        ->join("departments", "employees.department_id","=", "departments.id")
+        ->leftJoin("positions", "employees.position_id","=", "positions.id")
+        ->leftJoin("offices", "employees.office_id","=", "offices.id")
+        ->leftJoin("departments", "employees.department_id","=", "departments.id")
         ->select("employees.*", "positions.name as position_name","offices.name as office_name","departments.name as department_name")
         ->where("employees.active","=","1");
         if($department !=""){
@@ -128,32 +128,37 @@ class EmployeeController extends Controller
             'photo' => $file_name,
             'shift_id' => $info->shift,
             'police_card_id' => $info->police_card_id,
-            'national_card_id' => $info->national_card_id
+            'national_card_id' => $info->national_card_id,
+            'language'=> $info->language
         );
         
-       // get language
-       $lang = json_encode($r->language);
-       $lang = json_decode($lang);
-       $languages = array();
-       for($i=0;$i<count($lang); $i++)
-       {
-           $x = array(
-               "name" => $lang[$i]->name,
-               "description" => $lang[$i]->description,
-               "employee_id" => 1,
-               "order_number" => $lang[$i]->order
-           );
-           $languages[] = $x;
-       }
-
-        $i = DB::table('employees')->insertGetId($data);
-       
-        if($i>0)
+        $emp_id = DB::table('employees')->insertGetId($data);
+       // get emp_education
+        $emp_education = json_encode($r->emp_education);
+        $emp_education = json_decode($emp_education);
+        $education = array();
+        for($i=0;$i<count($emp_education); $i++)
         {
-            // insert lang
-            DB::table("languages")->insert($languages);
+            $x = null;
+            if($emp_education[$i]->edu_date != null){
+                $x = array(
+                "edu_date" => $emp_education[$i]->edu_date,
+                "duration" => $emp_education[$i]->duration,
+                "emp_id" => $emp_id,
+                "skill" => $emp_education[$i]->skill,
+                "place" => $emp_education[$i]->place
+                );
+            }
+            $education[] = $x;
+        } 
+        if($emp_id>0)
+        {
+            // insert emp_education
+            if($education !=null){
+                //DB::table("emp_education")->insert($education);
+            }          
         }
-        return $i;
+        return $education;
     }
     public function update(Request $r)
     {

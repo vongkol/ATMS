@@ -270,7 +270,7 @@
                                     <div class="tab-pane fade" id="pills-grade-study" role="tabpanel" aria-labelledby="pills-grade-study-tab">
                                         <div class="form-group row">
                                             <div class="col-md-12">
-                                                សូមរៀបអីពីសកម្មភាពការងារ និង មុខតំណែងដែលបានទទួលកន្លងមក (ឆ្នាំ ១៦៩៧ ដល់បច្ចុប្បន្ន) <a href="#" id="addMore4" class="btn btn-xs btn-primary">បន្តែម</a></th>
+                                                សូមរៀបរាប់វគ្គបណ្តុះបណ្តាល និងថ្ងៃ ខែ ឆ្នាំ ដែលបានសិក្សាកន្លងមក <a href="#" id="addMore3" class="btn btn-xs btn-primary">បន្តែម</a></th>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -279,11 +279,12 @@
                                                     <div class="col-sm-12">
                                                         <table id="" class="table table-condensed">
                                                             </thead>
-                                                            <tbody id="data4">
+                                                            <tbody id="data3">
                                                             <tr>
-                                                                <td><input type="text" class="form-control" order="0" placeholder="ការបវិច្ឆេទ"></td>
-                                                                <td><input type="text" class="form-control"​ placeholder="សកម្មភាពការងារ និង មុខតំណែងដែលធ្លាប់បានទទួល"></td>
-                                                                <td><input type="text" class="form-control" placeholder="នាយកដ្ធាន-អង្គភាព"​></td>
+                                                                <td><input type="date" class="form-control" order="0" placeholder="ការបវិច្ឆេទ"></td>
+                                                                <td><input type="text" class="form-control" placeholder="រយៈពេលសិក្សា"></td>
+                                                                <td><input type="text" class="form-control"​ placeholder="ជំនាញ នៃវគ្គបណ្តុះបណ្តាល"></td>
+                                                                <td><input type="text" class="form-control" placeholder="គ្រឹះស្ថានសិក្សាបណ្តុះបណ្តាល"​></td>
                                                                 <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
                                                             </tr>
                                                             </tbody>
@@ -308,7 +309,7 @@
                                                             <tbody id="data6">
                                                             <tr>
                                                                 <td><input type="text" class="form-control" order="0" placeholder="លេខ"></td>
-                                                                <td><input type="text" class="form-control"​ placeholder="កាលបរិច្ឆេទ"></td>
+                                                                <td><input type="date" class="form-control"​ placeholder="កាលបរិច្ឆេទ"></td>
                                                                 <td><input type="text" class="form-control" placeholder="រូបភាពលើកសរសើរ"​></td>
                                                                 <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
                                                             </tr>
@@ -323,7 +324,7 @@
                                     <div class="tab-pane fade" id="pills-punish" role="tabpanel" aria-labelledby="pills-punish-tab">
                                         <div class="form-group row">
                                             <div class="col-md-12">
-                                                សូមរៀបអីពីសកម្មភាពការងារ និង មុខតំណែងដែលបានទទួលកន្លងមក (ឆ្នាំ ១៦៩៧ ដល់បច្ចុប្បន្ន) <a href="#" id="addMore5" class="btn btn-xs btn-primary">បន្តែម</a></th>
+                                                សូមរៀបអីពីសកម្មភាពពិន័យ <a href="#" id="addMore5" class="btn btn-xs btn-primary">បន្តែម</a></th>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -335,7 +336,7 @@
                                                             <tbody id="data5">
                                                             <tr>
                                                                 <td><input type="text" class="form-control" order="0" placeholder="លេខ"></td>
-                                                                <td><input type="text" class="form-control" placeholder="ការបវិច្ឆេទ"></td>
+                                                                <td><input type="date" class="form-control" placeholder="ការបវិច្ឆេទ"></td>
                                                                 <td><input type="text" class="form-control"​ placeholder="រូបភាពវិន័យដែលធ្លាប់ទទួល"></td>
                                                                 <td><input type="text" class="form-control" placeholder="មូលហេតុ"​></td>
                                                                 <td><a href="#" class="btn btn-sm btn-danger" onclick='rmRow(this,event)'>លុប</a> </td>
@@ -363,7 +364,6 @@
 		                    </div>
                         </div>
                         <div class="form-group row">
-                            <label class="control-label col-lg-1 col-sm-2">&nbsp;</label>
                             <div class="col-lg-6 col-sm-8">
                                 <button class="btn btn-primary"​ id="btnSave" type="button">{{$lb_save}}</button>
                                 <button class="btn btn-danger" type="reset">{{$lb_cancel}}</button>
@@ -398,7 +398,7 @@ $('#pills-tab a').click(function() {
                 var counter = $("#data3 tr").length + 1;
                 var tr = "";
                 tr += "<tr>";
-                tr += "<td>" + "<input type='text' class='form-control' placeholder='ការបវិច្ឆេទ' order='" + counter + "'></td>";
+                tr += "<td>" + "<input type='date' class='form-control' placeholder='ការបវិច្ឆេទ' order='" + counter + "'></td>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='រយ:ពេលសិក្សា'​>" + "</td>";
                 tr += "<td>" + "<input type='text' class='form-control'​ placeholder='ជំនាញ នៃវគ្គបណ្ឌោះបណ្តាល'>" + "</td>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='គ្រឹះស្តានសិក្សាបណ្តុោះបណ្តាល'​>" + "</td>";
@@ -417,7 +417,7 @@ $('#pills-tab a').click(function() {
                 var counter = $("#data4 tr").length + 1;
                 var tr = "";
                 tr += "<tr>";
-                tr += "<td>" + "<input type='text' class='form-control' placeholder='ការបវិច្ឆេទ' order='" + counter + "'></td>";
+                tr += "<td>" + "<input type='date' class='form-control' placeholder='ការបវិច្ឆេទ' order='" + counter + "'></td>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='សកម្មភាពការងារ និង មុខតំណែងដែលធ្លាប់បានទទួល'​>" + "</td>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='នាយកដ្ធាន-អង្គភាព'​>" + "</td>";
                 tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
@@ -437,7 +437,7 @@ $('#pills-tab a').click(function() {
                 var tr = "";
                 tr += "<tr>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='លេខ' order='" + counter + "'></td>";
-                tr += "<td>" + "<input type='text' class='form-control' placeholder='កាលបរិច្ឆេទ'​>" + "</td>";
+                tr += "<td>" + "<input type='date' class='form-control' placeholder='កាលបរិច្ឆេទ'​>" + "</td>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='រូបភាពវិន័យដែលធ្លាប់ទទួល'​>" + "</td>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='មូលហេតុ'​>" + "</td>";
                 tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
@@ -457,7 +457,7 @@ $('#pills-tab a').click(function() {
                 var tr = "";
                 tr += "<tr>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='លេខ' order='" + counter + "'></td>";
-                tr += "<td>" + "<input type='text' class='form-control' placeholder='កាលបរិច្ឆេទ'​>" + "</td>";
+                tr += "<td>" + "<input type='date' class='form-control' placeholder='កាលបរិច្ឆេទ'​>" + "</td>";
                 tr += "<td>" + "<input type='text' class='form-control' placeholder='រូបភាពវិន័យដែលធ្លាប់ទទួល'​>" + "</td>";
                 tr += "<td>" + "<a href='#' class='btn btn-sm btn-danger' onclick='rmRow(this,event)'>លុប</a>" +"</td>";
                 tr += "</tr>";
@@ -493,26 +493,28 @@ $('#pills-tab a').click(function() {
                     office: $("#office").val(),
                     police_card_id: $("#police_card_id").val(),
                     national_card_id: $("#national_card_id").val(),
+                    language: $("#language").val()
                 };
      
                 
-                var lang = [];
+                var emp_education = [];
                 var tr3 = $("#data3 tr");
                 for(var i=0;i<tr3.length;i++)
                 {
                     var tds = $(tr3[i]).children("td");
                     var obj = {
-                        name: $(tds[0]).children("input").val(),
-                        description: $(tds[1]).children("input").val(),
-                        order: $(tds[0]).children("input").attr("order")
+                        edu_date: $(tds[0]).children("input").val(),
+                        duration: $(tds[1]).children("input").val(),
+                        skill: $(tds[2]).children("input").val(),
+                        place: $(tds[3]).children("input").val()
                     };
-                    lang.push(obj);
+                    emp_education.push(obj);
                 }
             
                 // data to send
                 var data = {
                     personal_info: info,
-                    language: lang
+                    emp_education: emp_education
                 }
                 // send data to server
                 $.ajax({
@@ -527,6 +529,7 @@ $('#pills-tab a').click(function() {
                         {
                             location.href = burl + "/employee/create";
                         }
+                        console.log(sms);
                     },
                         error: function() {
                             alert("សូមត្រួតពិនិត្យ ព៌តមានរបស់អ្នកឡើងវិញ!");

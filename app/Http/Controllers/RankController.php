@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
-class RoomController extends Controller
+class RankController extends Controller
 {
     // index
     public function index()
     {
-        $data['rooms'] = DB::table('rooms')->get();
-        return view('rooms.index', $data);
+        $data['ranks'] = DB::table('ranks')->get();
+        return view('ranks.index', $data);
     }
     public function create()
     {
-        return view('rooms.create');
+        return view('ranks.create');
     }
     public function save(Request $r)
     {
@@ -31,25 +31,25 @@ class RoomController extends Controller
         }
         else
         {
-            $sms = "The new room has been created successfully.";
-            $sms1 = "Fail to create the new room, please check again!";
+            $sms = "The new rank has been created successfully.";
+            $sms1 = "Fail to create the new rank, please check again!";
         }
-        $i = DB::table('rooms')->insert($data);
+        $i = DB::table('ranks')->insert($data);
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/room/create');
+            return redirect('/rank/create');
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/room/create')->withInput();
+            return redirect('/rank/create')->withInput();
         }
     }
     public function edit($id)
     {
-        $data['room'] = DB::table('rooms')->where('id', $id)->first();
-        return view('rooms.edit', $data);
+        $data['rank'] = DB::table('ranks')->where('id', $id)->first();
+        return view('ranks.edit', $data);
     }
     public function update(Request $r)
     {
@@ -68,21 +68,21 @@ class RoomController extends Controller
             $sms = "All changes have been saved successfully.";
             $sms1 = "Fail to to save changes, please check again!";
         }
-        $i = DB::table('rooms')->where('id', $r->id)->update($data);
+        $i = DB::table('ranks')->where('id', $r->id)->update($data);
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/room/edit/'.$r->id);
+            return redirect('/rank/edit/'.$r->id);
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/room/edit/'.$r->id);
+            return redirect('/rank/edit/'.$r->id);
         }
     }
     public function delete($id)
     {
-        DB::table('rooms')->where('id', $id)->delete();
-        return redirect('/room');
+        DB::table('ranks')->where('id', $id)->delete();
+        return redirect('/rank');
     }
 }

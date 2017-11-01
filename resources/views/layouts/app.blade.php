@@ -129,6 +129,9 @@
                                 <a class="nav-link" href="{{url('/position')}}"><i class="fa fa-user"></i>មុខងារ តួនាទី</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{url('/rank')}}"><i class="fa fa-user"></i>ឋានន្តរសក្តិ</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{url('/leavetype')}}"><i class="fa fa-tags"></i>ប្រភេទច្បាប់</a>
                             </li>
                             <li class="nav-item">

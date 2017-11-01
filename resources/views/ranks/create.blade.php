@@ -6,8 +6,8 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header text-bold">
-                    <i class="fa fa-align-justify"></i> {{$lb_edit_room}}&nbsp;&nbsp;
-                    <a href="{{url('/room')}}" class="btn btn-link btn-sm">{{$lb_back_to_list}}</a>
+                    <i class="fa fa-align-justify"></i> {{$lb_new_rank}}&nbsp;&nbsp;
+                    <a href="{{url('/rank')}}" class="btn btn-link btn-sm">{{$lb_back_to_list}}</a>
                 </div>
                 <div class="card-block">
                     @if(Session::has('sms'))
@@ -31,21 +31,19 @@
                         </div>
                     @endif
 
-                    <form action="{{url('/room/update')}}" onsubmit="return confirm('{{$lb_confirm_update}}')"
-                          class="form-horizontal" method="post">
+                    <form action="{{url('/rank/save')}}" class="form-horizontal" method="post">
                         {{csrf_field()}}
-                        <input type="hidden" value="{{$room->id}}" name="id">
                         <div class="form-group row">
                             <label for="name" class="control-label col-lg-1 col-sm-2">{{$lb_name}}</label>
                             <div class="col-lg-6 col-sm-8">
-                                <input type="text" required autofocus name="name" id="name" class="form-control" value="{{$room->name}}">
+                                <input type="text" required autofocus name="name" id="name" class="form-control" value="{{old('name')}}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-lg-1 col-sm-2">&nbsp;</label>
                             <div class="col-lg-6 col-sm-8">
                                 <button class="btn btn-primary" type="submit">{{$lb_save}}</button>
-
+                                <button class="btn btn-danger" type="reset">{{$lb_cancel}}</button>
                             </div>
                         </div>
                     </form>

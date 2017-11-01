@@ -6,8 +6,8 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header text-bold">
-                    <i class="fa fa-align-justify"></i> {{$lb_room_list}}&nbsp;&nbsp;
-                    <a href="{{url('/room/create')}}" class="btn btn-link btn-sm">{{$lb_new}}</a>
+                    <i class="fa fa-align-justify"></i> {{$lb_rank_list}}&nbsp;&nbsp;
+                    <a href="{{url('/rank/create')}}" class="btn btn-link btn-sm">{{$lb_new}}</a>
                 </div>
                 <div class="card-block">
                     <table class="table table-condensed table-striped table-responsive">
@@ -20,13 +20,13 @@
                         </thead>
                         <tbody>
                         @php($i=1)
-                        @foreach($rooms as $room)
+                        @foreach($ranks as $rank)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$room->name}}</td>
+                                <td>{{$rank->name}}</td>
                                 <td>
-                                    <a href="{{url('/room/edit/'.$room->id)}}" title="{{$lb_edit}}"><i class="fa fa-edit text-success"></i></a>&nbsp;&nbsp
-                                    <a href="{{url('/room/delete/'.$room->id)}}" onclick="return confirm('{{$lb_confirm_delete}}')" title="{{$lb_delete}}"><i class="fa fa-remove text-danger"></i></a>
+                                    <a href="{{url('/rank/edit/'.$rank->id)}}" title="{{$lb_edit}}"><i class="fa fa-edit text-success"></i></a>&nbsp;&nbsp
+                                    <a href="{{url('/rank/delete/'.$rank->id)}}" onclick="return confirm('{{$lb_confirm_delete}}')" title="{{$lb_delete}}"><i class="fa fa-remove text-danger"></i></a>
                                 </td>
                             </tr>
                         @endforeach

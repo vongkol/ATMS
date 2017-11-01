@@ -77,6 +77,13 @@ Route::get('/unit/edit/{id}', "UnitController@edit");
 Route::get('/unit/delete/{id}', "UnitController@delete");
 Route::post('/unit/save', "UnitController@save");
 Route::post('/unit/update', "UnitController@update");
+// rank
+Route::get('/rank', "RankController@index");
+Route::get('/rank/create', "RankController@create");
+Route::get('/rank/edit/{id}', "RankController@edit");
+Route::get('/rank/delete/{id}', "RankController@delete");
+Route::post('/rank/save', "RankController@save");
+Route::post('/rank/update', "RankController@update");
 // Khmer
 Route::get('/khmer', "KhmerController@index");
 Route::get('/thai', "KhmerController@thai");
